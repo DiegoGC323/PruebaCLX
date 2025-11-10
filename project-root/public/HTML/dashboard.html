@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - CECyT 19 CELEX</title>
+  <link rel="stylesheet" href="../CSS/index.css">
+  <!-- Fuente institucional -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- FontAwesome para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <!-- Header institucional -->
+  <header class="header-institucional">
+    <div class="header-content">
+      <div class="logo-header-container left">
+        <img src="../IMG/logo-ipn-blanco.png" alt="Logo Politecnico" class="logo-header">
+      </div>
+      <div class="titulo-header-container">
+        <h1 class="titulo-institucion">
+          CURSOS EXTRACURRICULARES DE LENGUAS EXTRANJERAS<br>
+          CECyT No.19 
+          'LEONA VICARIO'
+        </h1>
+      </div>
+      <div class="logo-header-container right">
+        <img src="../IMG/ANI_5_CECyT19-LEONA VICARIO-blanco.png" alt="CELEX CECyT 19" class="logo-header">
+      </div>
+    </div>
+  </header>
+
+  <!-- Sidebar fuera del container, pero dentro del body -->
+  <nav class="sidebar">
+    <ul class="sidebar-menu minimal-menu">
+      <li><a href="index.html" class="sidebar-link" title="Inicio"><i class="fas fa-home"></i><span class="sidebar-label">Inicio</span></a></li>
+      <li><a href="#" class="sidebar-link active" title="Dashboard"><i class="fas fa-tachometer-alt"></i><span class="sidebar-label">Dashboard</span></a></li>
+      <li><a href="https://www.cecyt19.ipn.mx/servicios/celex-cecyt19-informacion.html#IDREQUISITOS" target="_blank" class="sidebar-link" title="Reglamento"><i class="fas fa-gavel"></i><span class="sidebar-label">Reglamento</span></a></li>
+      <li><a href="https://www.gob.mx/ayuda" target="_blank" class="sidebar-link" title="Ayuda"><i class="fas fa-question-circle"></i><span class="sidebar-label">Ayuda</span></a></li>
+      <li><a href="#" class="sidebar-link" id="logoutLink" title="Cerrar Sesión"><i class="fas fa-sign-out-alt"></i><span class="sidebar-label">Salir</span></a></li>
+      <li><a href="https://www.facebook.com/CELEXCECYT19IPN?locale=es_LA" target="_blank" class="sidebar-link" title="Facebook"><i class="fab fa-facebook"></i><span class="sidebar-label">Facebook</span></a></li>
+      <li><a href="https://www.instagram.com/celex.cecyt19.ipn?fbclid=IwY2xjawMxLhpleHRuA2FlbQIxMABicmlkETFCRlhTMUwzcUFQajlIOGFiAR6utHWLCzkvS4beRidT29Xa2Qd_o5b20G9sxqCwvqjRbKf3Rg-UH-bYVdcKtQ_aem_Le7S1xtQeWngf8dxxSpQUQ" target="_blank" class="sidebar-link" title="Instagram"><i class="fab fa-instagram"></i><span class="sidebar-label">Instagram</span></a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <!-- Área principal -->
+    <main class="main-content">
+      <!-- Información del Usuario -->
+      <section class="user-info-card">
+        <div class="user-info-header">
+          <i class="fas fa-user-circle icon-user"></i>
+          <span id="user-title">Información del Usuario</span>
+        </div>
+        <div id="user-fields" class="user-fields">
+          <!-- Los campos se llenarán dinámicamente con JavaScript -->
+        </div>
+        <div class="user-actions">
+          <button class="btn-edit" id="editBtn">
+            <i class="fas fa-edit"></i> Editar Información
+          </button>
+          <button class="btn-save" id="saveBtn" style="display: none;">
+            <i class="fas fa-save"></i> Guardar Cambios
+          </button>
+          <button class="btn-cancel" id="cancelBtn" style="display: none;">
+            <i class="fas fa-times"></i> Cancelar
+          </button>
+        </div>
+      </section>
+
+      <!-- Card de información adicional -->
+      <section class="info-card">
+        <div class="avisos">
+          <div class="aviso">
+            <b>Bienvenido al Sistema CELEX CECyT 19</b>
+            <p>Desde aquí puedes consultar y actualizar tu información personal.</p>
+          </div>
+          <div class="aviso">
+            <b>¿Necesitas ayuda?</b>
+            <p>Contacta al administrador del sistema o visita nuestra página de ayuda.</p>
+          </div>
+          <div class="aviso">
+            Para mayor información puedes escribir a este correo electrónico: <b>celex.cecyt19@ipn.mx</b>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-col footer-location">
+        <div class="footer-logo">
+        </div>
+        <div class="location-info">
+          <h5 class="footer-title">CELEX CECyT 19 "Leona Vicario"</h5>
+          <div class="address-container">
+            <div class="address-details">
+              <p><i class="fas fa-map-marker-alt"></i> Bosque de los Abedules 112</p>
+              <p>Los Heroes Tecamac</p>
+              <p>55764 Ciudad de México, Méx.</p>
+              <div class="contact-info">
+                <p><i class="fas fa-phone"></i> Teléfono: (55) 5729-6000 ext. 54190</p>
+                <p><i class="fas fa-envelope"></i> Email: celex.cecyt19@ipn.mx</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-col footer-map">
+        <h5 class="footer-title">Ubicación</h5>
+        <div class="map-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3759.8!2d-98.9637!3d19.7094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f3a1b8c7d8e5%3A0x1234567890abcdef!2sBosque%20de%20los%20Abedules%20112%2C%20Los%20Heroes%20Tecamac%2C%2055764%20Tecámac%20de%20Felipe%20Villanueva%2C%20Méx.!5e0!3m2!1ses!2smx!4v1633024800000!5m2!1ses!2smx"
+            width="100%" 
+            height="200" 
+            style="border:0; border-radius: 8px;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa de ubicación CELEX CECyT 19">
+          </iframe>
+          <div class="map-buttons">
+            <a href="https://maps.google.com/?q=Bosque+de+los+Abedules+112,+Los+Heroes+Tecamac,+55764+Ciudad+de+México,+Méx." 
+               target="_blank" 
+               class="map-button">
+              <i class="fas fa-directions"></i> Cómo llegar
+            </a>
+            <a href="https://www.google.com/maps/place/Bosque+de+los+Abedules+112,+Los+Heroes+Tecamac,+55764+Tecámac+de+Felipe+Villanueva,+Méx." 
+               target="_blank" 
+               class="map-button">
+              <i class="fas fa-external-link-alt"></i> Ver en Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-col footer-social">
+        <div class="footer-info">
+          <p><i class="fas fa-clock"></i> Horarios de atención:</p>
+          <p>Lunes a Viernes: 7:00 - 20:00 hrs</p>
+          <p>Sábado: 7:00 - 15:00 hrs</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../JS/dashboard.js"></script>
+</body>
+</html>

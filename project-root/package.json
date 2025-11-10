@@ -1,0 +1,15 @@
+{
+  "name": "login-plataforma-demo",
+  "version": "1.0.0",
+  "description": "Ejemplo de login con roles",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "express": "^4.21.2",
+    "express-session": "^1.18.2",
+    "mssql": "^11.0.1"
+  }
+}

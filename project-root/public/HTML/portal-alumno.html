@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Alumno - CECyT 19 CELEX</title>
+  <link rel="stylesheet" href="../CSS/index.css">
+  <!-- Fuente institucional -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- FontAwesome para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    /* Estilos específicos para las tarjetas tipo web icon set */
+    .portal-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      color: #5A1236;
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 2rem 0;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .icon-card {
+      background: #4a5568;
+      border-radius: 12px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .icon-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    }
+
+    .icon-container {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 2rem;
+      background: #ffffff;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .icon-card:hover .icon-container {
+      transform: scale(1.1) rotate(3deg);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Iconos específicos estilo web icon set */
+    .icon-speed {
+      background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+      position: relative;
+      border-radius: 50%;
+    }
+
+    .icon-speed::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 50px;
+      height: 30px;
+      background: #fff;
+      border-radius: 25px 25px 0 0;
+      transform: rotate(-15deg);
+    }
+
+    .icon-speed::after {
+      content: '';
+      position: absolute;
+      top: 35px;
+      left: 45px;
+      width: 0;
+      height: 0;
+      border-left: 15px solid #ff6b6b;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+    }
+
+    .icon-usability {
+      background: linear-gradient(135deg, #4ecdc4 0%, #2ed573 100%);
+      position: relative;
+    }
+
+    .icon-usability::before {
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      width: 45px;
+      height: 35px;
+      background: #fff;
+      border-radius: 4px;
+    }
+
+    .icon-usability::after {
+      content: '';
+      position: absolute;
+      top: 25px;
+      right: 15px;
+      width: 20px;
+      height: 4px;
+      background: #ffa726;
+      border-radius: 2px;
+      box-shadow: 0 8px 0 #ffa726, 0 16px 0 #ffa726;
+    }
+
+    .icon-security {
+      background: linear-gradient(135deg, #ffa726 0%, #ff9800 100%);
+      position: relative;
+    }
+
+    .icon-security::before {
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 45px;
+      background: #fff;
+      border-radius: 8px 8px 0 0;
+      clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    }
+
+    .icon-security::after {
+      content: '🛡️';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.5rem;
+    }
+
+    .icon-support {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      position: relative;
+    }
+
+    .icon-support::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px;
+      height: 50px;
+      background: #fff;
+      border-radius: 50%;
+      border: 8px solid #667eea;
+      box-sizing: border-box;
+    }
+
+    .icon-support::after {
+      content: '?';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #667eea;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .card-title {
+      color: #ffffff;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .card-description {
+      color: #cbd5e0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+
+    .card-footer {
+      padding-top: 1rem;
+      border-top: 1px solid #2d3748;
+      margin-top: auto;
+    }
+
+    .card-feature {
+      color: #a0aec0;
+      font-size: 0.85rem;
+      font-style: italic;
+    }
+
+    /* Animación de entrada */
+    .icon-card {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .icon-card:nth-child(1) { animation-delay: 0.1s; }
+    .icon-card:nth-child(2) { animation-delay: 0.2s; }
+    .icon-card:nth-child(3) { animation-delay: 0.3s; }
+    .icon-card:nth-child(4) { animation-delay: 0.4s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .icon-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        padding: 1rem;
+      }
+      
+      .icon-card {
+        padding: 2rem 1.5rem;
+        min-height: 280px;
+      }
+      
+      .icon-container {
+        width: 75px;
+        height: 75px;
+      }
+      
+      .portal-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header institucional -->
+  <header class="header-institucional">
+    <div class="header-content">
+      <div class="logo-header-container left">
+        <img src="../IMG/logo-ipn-blanco.png" alt="Logo Politecnico" class="logo-header">
+      </div>
+      <div class="titulo-header-container">
+        <h1 class="titulo-institucion">
+          CURSOS EXTRACURRICULARES DE LENGUAS EXTRANJERAS<br>
+          CECyT No.19 
+          'LEONA VICARIO'
+        </h1>
+      </div>
+      <div class="logo-header-container right">
+        <img src="../IMG/ANI_5_CECyT19-LEONA VICARIO-blanco.png" alt="CELEX CECyT 19" class="logo-header">
+      </div>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <ul class="sidebar-menu minimal-menu">
+      <li><a href="/" class="sidebar-link" title="Inicio"><i class="fas fa-home"></i><span class="sidebar-label">Inicio</span></a></li>
+      <li><a href="#" class="sidebar-link active" title="Portal Alumno"><i class="fas fa-user-graduate"></i><span class="sidebar-label">Portal</span></a></li>
+      <li><a href="https://www.cecyt19.ipn.mx/servicios/celex-cecyt19-informacion.html#IDREQUISITOS" target="_blank" class="sidebar-link" title="Reglamento"><i class="fas fa-gavel"></i><span class="sidebar-label">Reglamento</span></a></li>
+      <li><a href="https://www.gob.mx/ayuda" target="_blank" class="sidebar-link" title="Ayuda"><i class="fas fa-question-circle"></i><span class="sidebar-label">Ayuda</span></a></li>
+      <li><a href="#" class="sidebar-link" title="Cerrar Sesión"><i class="fas fa-sign-out-alt"></i><span class="sidebar-label">Salir</span></a></li>
+      <li><a href="https://www.facebook.com/CELEXCECYT19IPN?locale=es_LA" target="_blank" class="sidebar-link" title="Facebook"><i class="fab fa-facebook"></i><span class="sidebar-label">Facebook</span></a></li>
+      <li><a href="https://www.instagram.com/celex.cecyt19.ipn" target="_blank" class="sidebar-link" title="Instagram"><i class="fab fa-instagram"></i><span class="sidebar-label">Instagram</span></a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <!-- Área principal -->
+    <main class="main-content">
+      <h1 class="portal-title">Portal del Alumno</h1>
+      
+      <!-- Grid de iconos tipo web icon set -->
+      <section class="icon-grid">
+        <!-- Información Personal (Speed) -->
+        <div class="icon-card">
+          <div>
+            <div class="icon-container">
+              <i class="fas fa-user-circle" style="font-size: 2.5rem; color: #e53e3e;"></i>
+            </div>
+            <h3 class="card-title">Información Personal</h3>
+            <p class="card-description">
+              Accede rápidamente a tu información personal, actualiza tus datos y gestiona tu cuenta de estudiante de manera eficiente.
+            </p>
+          </div>
+          <div class="card-footer">
+            <p class="card-feature">Acceso rápido y seguro a tu información</p>
+          </div>
+        </div>
+
+        <!-- Calificaciones (Security) -->
+        <div class="icon-card">
+          <div>
+            <div class="icon-container">
+              <i class="fas fa-chart-line" style="font-size: 2.5rem; color: #f56500;"></i>
+            </div>
+            <h3 class="card-title">Calificaciones</h3>
+            <p class="card-description">
+              Consulta segura de tus calificaciones, progreso académico y historial de evaluaciones con total privacidad y confiabilidad.
+            </p>
+          </div>
+          <div class="card-footer">
+            <p class="card-feature">Información protegida y confidencial</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-col footer-location">
+        <div class="footer-logo">
+        </div>
+        <div class="location-info">
+          <h5 class="footer-title">CELEX CECyT 19 "Leona Vicario"</h5>
+          <div class="address-container">
+            <div class="address-details">
+              <p><i class="fas fa-map-marker-alt"></i> Bosque de los Abedules 112</p>
+              <p>Los Heroes Tecamac</p>
+              <p>55764 Ciudad de México, Méx.</p>
+              <div class="contact-info">
+                <p><i class="fas fa-phone"></i> Teléfono: (55) 5729-6000 ext. 54190</p>
+                <p><i class="fas fa-envelope"></i> Email: celex.cecyt19@ipn.mx</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-col footer-map">
+        <h5 class="footer-title">Ubicación</h5>
+        <div class="map-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3759.8!2d-98.9637!3d19.7094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f3a1b8c7d8e5%3A0x1234567890abcdef!2sBosque%20de%20los%20Abedules%20112%2C%20Los%20Heroes%20Tecamac%2C%2055764%20Tecámac%20de%20Felipe%20Villanueva%2C%20Méx.!5e0!3m2!1ses!2smx!4v1633024800000!5m2!1ses!2smx"
+            width="100%" 
+            height="200" 
+            style="border:0; border-radius: 8px;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa de ubicación CELEX CECyT 19">
+          </iframe>
+          <div class="map-buttons">
+            <a href="https://maps.google.com/?q=Bosque+de+los+Abedules+112,+Los+Heroes+Tecamac,+55764+Ciudad+de+México,+Méx." 
+               target="_blank" 
+               class="map-button">
+              <i class="fas fa-directions"></i> Cómo llegar
+            </a>
+            <a href="https://www.google.com/maps/place/Bosque+de+los+Abedules+112,+Los+Heroes+Tecamac,+55764+Tecámac+de+Felipe+Villanueva,+Méx." 
+               target="_blank" 
+               class="map-button">
+              <i class="fas fa-external-link-alt"></i> Ver en Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-col footer-social">
+        <div class="footer-info">
+          <p><i class="fas fa-clock"></i> Horarios de atención:</p>
+          <p>Lunes a Viernes: 7:00 - 20:00 hrs</p>
+          <p>Sábado: 7:00 - 15:00 hrs</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
